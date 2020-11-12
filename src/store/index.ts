@@ -14,5 +14,5 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(thunk))
 )
 
-export type RooState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>
 export default store;

@@ -8,8 +8,8 @@ export const SET_SUCCESS = 'SET_SUCCESS';
 export interface User {
     firstName: string,
     email: string,
-    id: string,
     createdAt: any
+    id: string
 }
 
 export interface AuthState {
