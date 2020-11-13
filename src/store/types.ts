@@ -7,6 +7,7 @@ export const SET_SUCCESS = 'SET_SUCCESS';
 
 export interface User {
     firstName: string,
+    lastName: string,
     email: string,
     createdAt: any
     id: string
@@ -23,6 +24,7 @@ export interface AuthState {
 
 export interface SignUpData {
     firstName: string,
+    lastName: string,
     email: string,
     password: string
 }

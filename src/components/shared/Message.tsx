@@ -22,3 +22,5 @@ const Message: FC<MessageProps> = ({msg, type }) => {
         </article>
     )
 }
+
+export default Message;
