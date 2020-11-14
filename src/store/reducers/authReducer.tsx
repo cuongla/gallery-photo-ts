@@ -8,7 +8,7 @@ import {
     SET_ERROR,
     NEED_VERIFICATION,
     SET_SUCCESS
-} from '../types';
+} from '../types/authTypes';
 
 const initialState: AuthState = {
     user: null,

@@ -10,7 +10,7 @@ import {
     SET_ERROR,
     NEED_VERIFICATION,
     SET_SUCCESS
-} from '../types';
+} from '../types/authTypes';
 import {RootState} from '..';
 import firebase from '../../firebase/config';
 

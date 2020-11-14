@@ -5,6 +5,7 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 
 // reducers
 import authReducer from './reducers/authReducer';
+import galleryReducer from './reducers/galleryReducer';
 
 const rootReducer = combineReducers({
     auth: authReducer
