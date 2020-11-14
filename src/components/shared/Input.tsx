@@ -4,7 +4,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label: string;
 }
 
-const Input: FC<InputProps> = ({ type = 'text', placeholder, value, name, onChange, label }) => {
+const Input: FC<InputProps> = ({ type = 'text', placeholder, value, name, onChange, label, multiple }) => {
     return (
         <div className="field">
             <div className="control">
@@ -19,6 +19,7 @@ const Input: FC<InputProps> = ({ type = 'text', placeholder, value, name, onChan
                     onChange={onChange}
                     required
                     autoComplete="off"
+                    multiple={multiple}
                 />
             </div>
         </div>

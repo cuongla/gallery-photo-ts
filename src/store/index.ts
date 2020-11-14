@@ -8,7 +8,8 @@ import authReducer from './reducers/authReducer';
 import galleryReducer from './reducers/galleryReducer';
 
 const rootReducer = combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    gallery: galleryReducer
 })
 
 const store = createStore(
