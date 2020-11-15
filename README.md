@@ -1,46 +1,83 @@
-# Getting Started with Create React App
+# Electron Chat App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple chat application using React and Electron to improve user experience.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+`$ git clone https://github.com/tinla94/Electron-Chat-App` or click `Clone or download`.
 
-### `yarn start`
+### Code Folder
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. Install node packages: `npm install`
+2. Start up browser to see UI: `npm start`.
+3. Electron will load its own window
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technology Use
 
-### `yarn test`
+### Front-End
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. `React` - an open-source JavaScript library which is used for building user interfaces specifically for single page applications
 
-### `yarn build`
+2. `React Hooks` - functions that let us hook into the React state and lifecycle features from function components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. `CSS` ( Cascading Style Sheets ) - used to style the web page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+5 `Bulma` - a free, open source CSS framework based on Flexbox and used by more than 200,000 developers.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Other Tools
 
-### `yarn eject`
+1. `Firebase` - a Google's mobile application development platform that helps you build, improve, and grow your app.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. `Google Analytics` - uses a JavaScript code to collect information from websites.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. `webpack` -  a static module bundler for modern JavaScript applications. When webpack processes your application, it internally builds a dependency graph which maps every module your project needs and generates one or more bundles.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Setup for build
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Start your webpack
 
-## Learn More
+You can check webpack.common.js, webpack.dev.js and webpack.prod.js for more information.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+    "watch": "webpack --config=webpack.dev.js --watch",
+    "build": "webpack --config=webpack.prod.js",
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Implement firebase
+
+```
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/firestore';
+import 'firebase/storage';
+
+firebase.initializeApp({
+    apiKey: `${process.env.REACT_APP_FIREBASE_API_KEY}`,
+    authDomain: `${process.env.REACT_APP_FIREABSE_AUTH_DOMAIN}`,
+    databaseURL: `${process.env.REACT_APP_FIREBASE_DB_URL}`,
+    projectId: `${process.env.REACT_APP_FIREBASE_PROJECT_ID}`,
+    storageBucket: `${process.env.REACT_APP_FIREBASE_STORAGE_BUCKET}`,
+    messagingSenderId: `${process.env.REACT_APP_MESSAGING_SENDER_ID}`,
+    appId: `${process.env.REACT_APP_APP_ID}`,
+    measurementId: `${process.env.REACT_APP_MEASUREMENT_ID}`
+})
+
+export default firebase;
+```
+
+
+## Deployment
+
+You can use any Cloud Server to deploy your application.
+
+In this project, I have used `Netlify` service to deploy my application.
+
+### Who is Netlify?
+
+`Netlify` a web developer platform that multiplies productivity. By unifying the elements of the modern decoupled web, from local development to advanced edge logic, `Netlify` enables a 10x faster path to much more performant, secure, and scalable websites and apps.
+
+You can learn more about how to deploy your app with `Netlify` here: https://www.netlify.com/blog/2016/09/29/a-step-by-step-guide-deploying-on-netlify/
+
+## Authors
+
+- **Tin La**
