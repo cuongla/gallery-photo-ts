@@ -1,4 +1,4 @@
-import React, {FC, useRef, FormEvent} from 'react';
+import React, { FC, useRef, FormEvent } from 'react';
 import Button from './Button';
 
 interface FileUploadProps {
@@ -9,26 +9,15 @@ const FileUpload: FC<FileUploadProps> = ({ onChange }) => {
     const fileInput = useRef<HTMLInputElement>(null);
 
     const pickImageButtonClickHandler = () => {
-        if(fileInput.current) {
+        if (fileInput.current) {
             fileInput.current.click();
         }
     }
 
     return (
         <div className="file-upload">
-            <input 
-                type="file"
-                onChange={onChange}
-                className="is-hidden"
-                multiple
-                ref={fileInput}
-            />
-            <Button 
-                text="Add Images"
-                onClick={pickImageButtonClickHandler}
-                type="button"
-                className="is-link"
-            />
+            <input type="file" name="files" onChange={onChange} className="is-hidden" multiple ref={fileInput} />
+            <Button text="Pick images" onClick={pickImageButtonClickHandler} type="button" className="is-link" />
         </div>
     )
 }

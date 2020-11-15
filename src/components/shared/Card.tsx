@@ -13,19 +13,11 @@ const Card: FC<CardProps> = ({ imageUrl, onDelete, onImageClick, publicCard, upl
     return (
         <div className="card">
             <div className="card-content">
-                <div
-                    style={{ backgroundImage: `url(${imageUrl})` }}
-                    onClick={onImageClick}
-                    className="content"></div>
+                <div className="content" style={{ backgroundImage: `url(${imageUrl})` }} onClick={onImageClick}></div>
             </div>
             <footer className="card-footer">
                 {publicCard && <p className="px-5 py-2">Uploaded by: {uploader}</p>}
-                {!publicCard && <a 
-                    href="/#" 
-                    className="card-footer-item"
-                    onClick={onDelete}>
-                        Delete
-                    </a>}
+                {!publicCard && <a href="/#" className="card-footer-item" onClick={onDelete}>Delete</a>}
             </footer>
         </div>
     )

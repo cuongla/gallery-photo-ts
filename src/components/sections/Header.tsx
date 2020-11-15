@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory, Link, useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Button from '../shared/Button';
@@ -8,6 +8,7 @@ import { signout } from '../../store/actions/authActions';
 
 const Header: FC = () => {
   const history = useHistory();
+  const location = useLocation();
   const dispatch = useDispatch();
   const { authenticated } = useSelector((state: RootState) => state.auth);
 
@@ -19,7 +20,7 @@ const Header: FC = () => {
     <nav className="navbar is-spaced has-shadow">
       <div className="container">
         <div className="navbar-brand">
-          <Link className="navbar-item" to={!authenticated ? "/" : "/dashboard"}>AppName</Link>
+          <Link className="navbar-item" to={!authenticated ? "/" : location.pathname === "/dashboard" ? "/" : "/dashboard"}>Gallery Ts</Link>
         </div>
 
         <div className="navbar-end">

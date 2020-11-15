@@ -11,19 +11,11 @@ const ImageModal: FC<ImageModalProps> = ({ onClose, url }) => {
 
     const modal = (
         <div className="modal">
-            <div 
-                onClick={onClose}
-                className="modal-background">
-                    <div className="modal-content modal-content--image">
-                        <img 
-                            src={url}
-                            alt="" 
-                        />
-                    </div>
+            <div className="modal-background" onClick={onClose}></div>
+            <div className="modal-content modal-content--image">
+                <img src={url} alt="" />
             </div>
-            <button 
-                onClick={onClose}
-                className="modal-close is-large"></button>
+            <button className="modal-close is-large" onClick={onClose}></button>
         </div>
     )
 

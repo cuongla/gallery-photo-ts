@@ -15,33 +15,15 @@ const Alert: FC<AlertProps> = ({ onClose, onSubmit, title, deleting }) => {
 
     const alert = (
         <div className="modal">
-            <div
-                className="modal-background"
-                onClick={onClose}
-            >
-                <div className="modal-content has-background-white px-4 py-4 is-rounded">
-                    <h2 className="is-size-4 text-centered mb-4">
-                        {title}
-                    </h2>
-                    <div className="is-flex align-center">
-                        <Button
-                            text="Cancel"
-                            className="mr-2"
-                            onClick={onClose}
-                        />
-                        <Button 
-                            text={deleting ? 'Deleting Image...' : 'Delete'}
-                            className="is-danger"
-                            onClick={onSubmit}
-                            disabled={deleting}
-                        />
-                    </div>
+            <div className="modal-background" onClick={onClose}></div>
+            <div className="modal-content has-background-white px-4 py-4 is-rounded">
+                <h2 className="is-size-4 has-text-centered mb-4">{title}</h2>
+                <div className="is-flex align-center">
+                    <Button text="Cancel" className="mr-2" onClick={onClose} />
+                    <Button text={deleting ? "Deleting..." : "Delete"} className="is-danger" onClick={onSubmit} disabled={deleting} />
                 </div>
-                <button 
-                    className="modal-close is-large"
-                    onClick={onClose}
-                ></button>
             </div>
+            <button className="modal-close is-large" onClick={onClose}></button>
         </div>
     )
 
