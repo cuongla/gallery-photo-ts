@@ -15,7 +15,7 @@ export interface GalleryImage {
 
 export interface GalleryState {
     images: GalleryImage[];
-    imageLoaded: boolean;
+    imagesLoaded: boolean;
 }
 
 interface AddImageAction {

@@ -1,5 +1,5 @@
 import React, { FC, MouseEvent } from 'react';
-import ReactDOM from 'react-dom';
+
 
 interface CardProps {
     onDelete: (e: MouseEvent<HTMLAnchorElement>) => void;

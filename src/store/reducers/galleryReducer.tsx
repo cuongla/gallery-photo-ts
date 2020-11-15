@@ -9,7 +9,7 @@ import {
 
 const initialState: GalleryState = {
     images: [],
-    imageLoaded: false,
+    imagesLoaded: false,
 }
 
 export default (state = initialState, action: GalleryAction) => {
@@ -18,7 +18,7 @@ export default (state = initialState, action: GalleryAction) => {
             return {
                 ...state,
                 images: action.payload,
-                imageLoaded: true
+                imagesLoaded: true
             };
         case ADD_IMAGE:
             return {
